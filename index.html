@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>シンプルタスク管理</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>タスク</h1>
+
+      <form id="task-form" class="task-form">
+        <input
+          id="task-input"
+          type="text"
+          placeholder="タスクを入力"
+          aria-label="新しいタスク"
+          required
+          maxlength="120"
+        />
+        <button type="submit">追加</button>
+      </form>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+    </main>
+
+    <template id="task-item-template">
+      <li class="task-item">
+        <label class="task-label">
+          <input class="task-toggle" type="checkbox" />
+          <span class="task-text"></span>
+        </label>
+        <button class="delete-btn" type="button" aria-label="タスクを削除">
+          削除
+        </button>
+      </li>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
